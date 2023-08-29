@@ -1,0 +1,87 @@
+.me-auto a{
+  margin: 5px;
+  text-decoration: none;
+  color:brown
+}
+
+.bots{
+  display: flex;
+  flex-wrap: wrap;
+}
+.bots div{
+  margin: 5px;
+}
+/* NavBar.css */
+
+/* Style for the navigation bar */
+.navbar {
+  background-color: #222;
+  color: white;
+}
+
+/* Style for the navigation links */
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Active link style */
+.nav-link.active {
+  font-weight: bold;
+}
+
+/* BotCollection.css */
+
+/* Style for the bot cards */
+.bots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+/* Style for each individual bot card */
+.bot-card {
+  width: 300px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for bot card images */
+.bot-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style for bot card title */
+.bot-card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+/* Style for bot card details */
+.bot-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Style for enlist button */
+.bot-card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Style for loading message */
+.loading-message {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
