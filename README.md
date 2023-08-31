@@ -1,8 +1,6 @@
 ﻿# Bot-Battlr
 # Bot Collection App
 
-![App Screenshot](screenshot.png) <!-- Replace with an actual screenshot of your app -->
-
 This is a simple web application built with React and React Bootstrap that displays a collection of bots. Users can view bot details and enlist them.
 
 ## Table of Contents
