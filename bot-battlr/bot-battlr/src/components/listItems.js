@@ -1,35 +1,53 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-
-function ListItem({ bot }) {
-  // Use state to manage whether the bot is enlisted
+function listItem({ bot }) {
   const [isEnlisted, setIsEnlisted] = useState(false);
 
   const navigate = useNavigate();
 
   const handleEnlistClick = () => {
-    // Perform enlistment logic here
-    // Example: setIsEnlisted(!isEnlisted);
+    setIsEnlisted(!isEnlisted);
   };
 
   const handleDetailsClick = () => {
-    // Navigate to the details page
-    // Example: navigate(`/details/${bot.id}`);
+    navigate(`/details/${bot.id}`);
   };
 
+  return <div className="botcollection">{/* Bot details and buttons */}</div>;
+}
+function BotDetails({ bot }) {
   return (
-    <div className='botcollection'>
-      <h2>{bot.name}</h2>
-      <p>Health: {bot.health}</p>
-      <p>Damage: {bot.damage}</p>
-      {/* Render buttons */}
-      <button onClick={handleEnlistClick}>
-        {isEnlisted ? 'Disenlist' : 'Enlist'}
-      </button>
-      <button onClick={handleDetailsClick}>Details</button>
+    <div className="bot-details">
+      <h2>Bot Details</h2>
+      <p>Name: {bot.name}</p>
+      <p>Description: {bot.description}</p>
+      <p>Price: ${bot.price}</p>
+
+      <div className="buttons">
+        <Link to={`/list/${bot.id}`} className="button">
+          View Details
+        </Link>
+        <button className="button">Add to Cart</button>
+      </div>
     </div>
   );
 }
+export default listItem;
 
-export default ListItem;
+// import BotArmy from "./BotArmy";
+// import { useNavigate } from "react-router-dom";
+
+// import { useRef, useState } from "react";
+// import { isDisabled } from "@testing-library/user-event/dist/utils";
+
+// function ListItem({ bot }) {
+//   console.log(bot);
+//   let isEnlisted = useRef();
+//   let navigate = useNavigate();
+
+//   console.log(isEnlisted);
+//   return <div className="botcollection"></div>;
+// }
+// export default ListItem;

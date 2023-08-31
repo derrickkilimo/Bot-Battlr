@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import ListCollection from './components/ListCollection';
-import BotArmy from './components/BotArmy';
-import { Route, Routes } from 'react-router-dom';
-import NavBarComp from './components/NavBar'; // Correct import path for NavBarComp
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import { ListCollection } from "./components/ListCollection";
+import BotArmy from "./components/BotArmy";
+import { Route, Routes } from "react-router-dom";
+import NavBar from "./components/NavBar"; // Correct import path for NavBarComp
 
 function App() {
   const [Bots, setBots] = useState([]);
@@ -23,7 +23,7 @@ function App() {
     if (!Enlistedbot.some((bot) => bot.id === botId)) {
       const selectedBot = Bots.find((bot) => bot.id === botId);
       setEnlistedbot([...Enlistedbot, selectedBot]);
-      alert('Bot added successfully');
+      alert("Bot added successfully");
     } else {
       alert("Bot is already enlisted");
     }
@@ -41,19 +41,24 @@ function App() {
     setEnlistedbot(updatedEnlistedbot);
 
     fetch(`http://localhost:8001/bots/${botId}`, {
-      method: 'DELETE',
-    })
-      .then(() => {
-        alert("Bot deleted");
-      });
+      method: "DELETE",
+    }).then(() => {
+      alert("Bot deleted");
+    });
   }
 
   return (
     <div className="App">
-      <NavBarComp />
+      <NavBar />
       <Routes>
-        <Route path="/BotArmy" element={<BotArmy data={Enlistedbot} handleDelist={handleRelease} />} />
-        <Route path="/Army" element={<ListCollection bots={Bots} sendId={handleEnlist} />} />
+        <Route
+          path="/BotArmy"
+          element={<BotArmy data={Enlistedbot} handleDelist={handleRelease} />}
+        />
+        <Route
+          path="/Army"
+          element={<ListCollection bots={Bots} sendId={handleEnlist} />}
+        />
       </Routes>
     </div>
   );

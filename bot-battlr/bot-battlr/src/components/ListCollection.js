@@ -1,7 +1,7 @@
-import React from 'react';
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+import React from "react";
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 
 const ListCollection = ({ bots, sendId }) => {
   if (!bots || bots.length === 0) {
@@ -9,8 +9,8 @@ const ListCollection = ({ bots, sendId }) => {
   }
 
   return (
-    <div className='bots'>
-      {bots.map(bot => (
+    <div className="bots">
+      {bots.map((bot) => (
         <Col key={bot.id}>
           <Card style={{ padding: "10px" }}>
             <Card.Img variant="top" src={bot.avatar_url} />
@@ -26,7 +26,7 @@ const ListCollection = ({ bots, sendId }) => {
               style={{
                 width: "50%",
                 alignItems: "center",
-                margin: "25px"
+                margin: "25px",
               }}
               onClick={(e) => sendId(bot.id, e)}
             >

@@ -17,13 +17,18 @@
 .navbar {
   background-color: #222;
   color: white;
+  height: 100px;
+  padding: 20px;
+  font-size: 30px;
+  
 }
 
 /* Style for the navigation links */
 .nav-link {
   color: white;
   text-decoration: none;
-  margin: 0 10px;
+  height: 70px;
+  
 }
 
 /* Active link style */
@@ -31,14 +36,12 @@
   font-weight: bold;
 }
 
-/* BotCollection.css */
-
 /* Style for the bot cards */
 .bots {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 20px;
+  padding: 70px;
 }
 
 /* Style for each individual bot card */
